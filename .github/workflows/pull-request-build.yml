@@ -10,7 +10,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ilammy/msvc-dev-cmd@v1.12.1
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Visual Studio Developer Console
+        uses: ilammy/msvc-dev-cmd@v1.12.1
       - name: Build project
         run: msbuild ./WatchIT.Database/WatchIT.Database.sqlproj
