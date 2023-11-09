@@ -1,0 +1,21 @@
+name: Deploy database to DEV environment
+
+on:
+  push:
+    branches: [ "dev" ]
+  
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: uwindows-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Add sqlpackage to PATH
+        uses: coreywebber/setup-sqlpackage@v1
+        with:
+          sql-version: 19
+      - name: Deploy database to DEV Environment
+        run: sqlpackage /Action:Publish /SourceFile:"WatchIT.Database.dacpac" /TargetConnectionString:"${{DEV_DB_CONNECTION_STRING}}"
