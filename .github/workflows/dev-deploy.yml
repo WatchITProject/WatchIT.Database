@@ -20,5 +20,5 @@ jobs:
       - name: Deploy database to DEV Environment
         shell: pwsh
         env:
-          CONNECTION_STRING: ${{DEV_DB_CONNECTION_STRING}}
+          CONNECTION_STRING: ${{secrets.DEV_DB_CONNECTION_STRING}}
         run: sqlpackage /Action:Publish /SourceFile:"WatchIT.Database.dacpac" /TargetConnectionString:"$env:CONNECTION_STRING"
