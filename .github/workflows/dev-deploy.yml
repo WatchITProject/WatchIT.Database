@@ -15,8 +15,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Add sqlpackage to PATH
         uses: coreywebber/setup-sqlpackage@v1
-        with:
-          sql-version: 19
       - name: Deploy database to DEV Environment
         shell: pwsh
         env:
