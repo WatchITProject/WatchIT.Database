@@ -29,11 +29,10 @@ jobs:
         uses: actions/download-artifact@v3.0.2
         with:
           name: DB
-      - name: Deploy database to SQL Server instance
-        uses: Azure/sql-action@v2.2
+      - name: Deploy SQL Database on SQL Server instance
+        uses: Azure/sql-action@v1.3
         with:
+          server-name: '${{ secrets.DEV_DB_NAME }}'
           connection-string: '${{ secrets.DEV_DB_CONNECTION_STRING }}'
-          path: 'WatchIT.Database.dacpac'
-          action: 'publish'
-          arguments: '/p:DropObjectsNotInSource=true'
+          dacpac-package: 'WatchIT.Database.dacpac'
 
