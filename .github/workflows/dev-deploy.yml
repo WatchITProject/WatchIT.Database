@@ -33,6 +33,5 @@ jobs:
         uses: Azure/sql-action@v1.3
         with:
           connection-string: '${{ secrets.DEV_DB_CONNECTION_STRING }}'
-          path: 'WatchIT.Database.dacpac'
-          action: publish
+          dacpac-package: 'WatchIT.Database.dacpac'
           arguments: '/p:DropObjectsNotInSource=true'
