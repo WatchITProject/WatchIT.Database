@@ -23,7 +23,7 @@ jobs:
           path: ${{ github.workspace }}\WatchIT.Database\bin\Output\
   Deploy:
     needs: Build
-    runs-on: ubuntu-latest
+    runs-on: watchit-dev
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3.0.2
