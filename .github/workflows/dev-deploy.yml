@@ -12,26 +12,11 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Use Visual Studio Developer Console
-        uses: ilammy/msvc-dev-cmd@v1.12.1
-      - name: Build project
-        run: msbuild ./WatchIT.Database/WatchIT.Database.sqlproj /p:Configuration=Release
-      - name: Publish artifact
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: DB
-          path: ${{ github.workspace }}\WatchIT.Database\bin\Output\
-  Deploy:
-    needs: Build
-    runs-on: watchit-dev
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3.0.2
-        with:
-          name: DB
-      - name: Deploy database to SQL Server instance
-        uses: Azure/sql-action@v1.3
-        with:
+      - uses: azure/sql-action@v2.2
+        with:        
           connection-string: '${{ secrets.DEV_DB_CONNECTION_STRING }}'
-          dacpac-package: 'WatchIT.Database.dacpac'
+          path: './WatchIT.Database/WatchIT.Database.sqlproj'
+          action: 'publish'
+          build-arguments: '-c Release'                 # Optional build options passed to dotnet build
           arguments: '/p:DropObjectsNotInSource=true'
+      
