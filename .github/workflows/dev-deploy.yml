@@ -31,8 +31,6 @@ jobs:
           name: DB
       - name: Add SqlPackage to path
         run: echo "~/.dotnet/tools/:$PATH" >> $GITHUB_PATH
-      - name: Show path
-        run: echo $GITHUB_PATH
-      - name: Use SqlPackage
-        run: sqlpackage
+      - name: Deploy DACPAC file to SQL Server instance
+        run: sqlpackage /Action:Publish /SourceFile:"WatchIT.Database.dacpac" /TargetConnectionString:"${{ secrets.DEV_DB_CONNECTION_STRING }}"
 
