@@ -30,9 +30,9 @@ jobs:
         with:
           name: DB
       - name: Add SqlPackage to path
-        run: export PATH="~/.dotnet/tools/:$PATH"
+        run: echo "~/.dotnet/tools/:$PATH" >> $GITHUB_PATH
       - name: Show path
-        run: echo $PATH
+        run: echo $GITHUB_PATH
       - name: Use SqlPackage
         run: sqlpackage
 
