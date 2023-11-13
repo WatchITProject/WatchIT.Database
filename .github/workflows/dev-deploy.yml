@@ -29,10 +29,10 @@ jobs:
         uses: actions/download-artifact@v3.0.2
         with:
           name: DB
+      - name: Setup VSWhere.exe
+        uses: warrenbuckley/Setup-VSWhere@v1
+      - name: Use SqlPackage
+        uses: coreywebber/setup-sqlpackage@v1.0.3
       - name: Deploy SQL Database on SQL Server instance
-        uses: Azure/sql-action@v1.3
-        with:
-          server-name: '${{ secrets.DEV_DB_NAME }}'
-          connection-string: '${{ secrets.DEV_DB_CONNECTION_STRING }}'
-          dacpac-package: 'WatchIT.Database.dacpac'
+        run: echo "works"
 
