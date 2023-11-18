@@ -81,5 +81,6 @@
     <Build Include="dbo\Tables\RatingActorSeries.sql" />
     <Build Include="dbo\Tables\RatingDirectorSeries.sql" />
     <Build Include="dbo\Tables\SeriesGenre.sql" />
+    <Build Include="dbo\Tables\AccountRefreshToken.sql" />
   </ItemGroup>
 </Project>
