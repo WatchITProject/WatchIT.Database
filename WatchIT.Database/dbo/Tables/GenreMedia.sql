@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[GenreMedia]
+(
+	[Id]		BIGINT		NOT NULL	IDENTITY(1,1),
+	[MediaId]	BIGINT		NOT NULL,
+	[GenreId]	INT			NOT NULL,
+	CONSTRAINT PK_GenreMedia PRIMARY KEY (Id),
+	CONSTRAINT FK_GenreMedia_Media FOREIGN KEY (MediaId) REFERENCES Media(Id),
+	CONSTRAINT FK_GenreMedia_Genre FOREIGN KEY (GenreId) REFERENCES Genre(Id)
+)

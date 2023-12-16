@@ -7,10 +7,10 @@
 	[Salt]					VARCHAR(20)		NOT NULL,
 	[Admin]					BIT				NOT NULL	DEFAULT(0),
 	[Description]			VARCHAR(MAX)	NULL,
-	[ProfilePicture]		VARCHAR(256)	NULL,
-	[BackgroundPicture]		VARCHAR(256)	NULL,
+	[ProfilePicture]		VARBINARY(MAX)	NULL,
+	[BackgroundPicture]		VARBINARY(MAX)	NULL,
 	[CreationDate]			DATETIME		NOT NULL	DEFAULT(GetDate()),
-	[LastLoginDate]			DATETIME		NULL,
 	[PasswordChangeDate]	DATETIME		NOT NULL	DEFAULT(GetDate()),
+	[LastActiveDate]		DATETIME		NOT NULL	DEFAULT(GetDate()),
 	CONSTRAINT PK_Account PRIMARY KEY (Id)
 )
