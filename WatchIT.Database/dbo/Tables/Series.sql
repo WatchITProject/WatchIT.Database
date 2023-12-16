@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[Series]
-(
-	[Id]	INT		NOT NULL	IDENTITY(1,1)
-	CONSTRAINT PK_Series PRIMARY KEY (Id)
-)

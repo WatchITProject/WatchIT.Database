@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[PersonCreatorType]
+(
+	[Id]	SMALLINT		NOT NULL	IDENTITY(1,1),
+	[Name]	VARCHAR(100)	NOT NULL,
+	CONSTRAINT PK_PersonCreatorType PRIMARY KEY (Id),
+)

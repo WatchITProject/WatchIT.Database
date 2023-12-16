@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[MediaMovie]
+(
+	[Id]			INT			NOT NULL	IDENTITY(1,1),
+	[MediaId]		BIGINT		NOT NULL	UNIQUE,
+	CONSTRAINT PK_MediaMovie PRIMARY KEY (Id),
+	CONSTRAINT FK_MediaMovie_Media FOREIGN KEY (MediaId) REFERENCES Media(Id),
+)
