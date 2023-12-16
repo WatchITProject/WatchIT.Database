@@ -78,7 +78,7 @@
     <Build Include="dbo\Tables\MediaMovie.sql" />
     <Build Include="dbo\Tables\MediaSeries.sql" />
     <Build Include="dbo\Tables\PersonCreatorType.sql" />
-    <Build Include="dbo\Tables\Images.sql" />
+    <Build Include="dbo\Tables\Image.sql" />
     <Build Include="dbo\Tables\AccountProfilePicture.sql" />
     <Build Include="dbo\Tables\AccountBackgroundPicture.sql" />
     <Build Include="dbo\Tables\AuthBackgroundImage.sql" />

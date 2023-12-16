@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Images]
+﻿CREATE TABLE [dbo].[Image]
 (
 	[Id]	UNIQUEIDENTIFIER	NOT NULL,
 	[Data]	VARBINARY(MAX)		NOT NULL,
