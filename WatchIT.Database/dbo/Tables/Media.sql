@@ -6,5 +6,6 @@
 	[Description]	VARCHAR(MAX)	NULL,
 	[ReleaseDate]	DATE			NULL,
 	[Length]		SMALLINT		NULL,
+	[PosterImage]	VARBINARY(MAX)	NULL,
 	CONSTRAINT PK_Media PRIMARY KEY (Id)
 )
